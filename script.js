@@ -18,10 +18,10 @@ let nmUsed = false;
 function generatePassword() {
 
   // Variables to hold strings of charaters to use in password
-  let strUpCase = "ABCDEFGHIJKLMNOPQURSTUVWXYZ";
-  let strLowCase = "abcdefghijklmnopqrstuvwxyz";
-  let strNumbers = "0123456789";
-  let strSpecial = "`~!@#$%^&*()_+-=?/<>";
+  let strUpCase = "_ABCDEFGHIJKLMNOPQURSTUVWXYZ";
+  let strLowCase = "_abcdefghijklmnopqrstuvwxyz";
+  let strNumbers = "_0123456789";
+  let strSpecial = "_`~!@#$%^&*()_+-=?/<>";
 
   let passwd = "";
   let rndNum = 0;
@@ -32,7 +32,7 @@ function generatePassword() {
     rndNum = Math.floor((Math.random() * 2) + 1);
     if ((upBool) && (rndNum == 1)) {
       //add character from random postion in Upper string
-      passwd = passwd + strUpCase.charAt(Math.floor((Math.random() * 26) + 1)-1);
+      passwd = passwd + strUpCase.charAt(Math.floor((Math.random() * 26) + 1));
       upUsed = true;
       i++;
     }
@@ -41,7 +41,7 @@ function generatePassword() {
     rndNum = Math.floor((Math.random() * 2) + 1);
     if ((lwBool) && (rndNum == 1)) {
       //add character from random postion in Lower string
-      passwd = passwd + strLowCase.charAt(Math.floor((Math.random() * 26) + 1)-1);      
+      passwd = passwd + strLowCase.charAt(Math.floor((Math.random() * 26) + 1));      
       lwUsed = true;
       i++;
     }
@@ -50,7 +50,7 @@ function generatePassword() {
     rndNum = Math.floor((Math.random() * 2) + 1);
     if ((spBool)  && (rndNum == 1)) {
       //add character from random postion in Special string
-      passwd = passwd + strSpecial.charAt(Math.floor((Math.random() * 20) + 1)-1);
+      passwd = passwd + strSpecial.charAt(Math.floor((Math.random() * 20) + 1));
       spUsed = true;
       i++;
     }
@@ -59,7 +59,7 @@ function generatePassword() {
     rndNum = Math.floor((Math.random() * 2) + 1);
     if ((nmBool)  && (rndNum == 1)) {
       //add character from random postion in Number string
-      passwd = passwd + strNumbers.charAt(Math.floor((Math.random() * 10) + 1)-1);
+      passwd = passwd + strNumbers.charAt(Math.floor((Math.random() * 10) + 1));
       nmUsed = true;
       i++;
     }
