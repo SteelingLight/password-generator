@@ -28,9 +28,9 @@ function generatePassword() {
   let i = 0;
   console.log(pwdLen);
   while (i < pwdLen)  {
+    rndNum = Math.floor((Math.random() * 4));
     //Flipping coin to see if the next character sequence is Upper Case
-    rndNum = Math.floor((Math.random() * 2) + 1);
-    if ((upBool) && (rndNum == 1)) {
+    if ((upBool) && (rndNum == 0)) {
       //add character from random postion in Upper string
       passwd = passwd + strUpCase.charAt(Math.floor((Math.random() * 26) + 1));
       upUsed = true;
@@ -38,7 +38,6 @@ function generatePassword() {
     }
 
     //Flipping coin to see if the next character sequence is Lower Case
-    rndNum = Math.floor((Math.random() * 2) + 1);
     if ((lwBool) && (rndNum == 1)) {
       //add character from random postion in Lower string
       passwd = passwd + strLowCase.charAt(Math.floor((Math.random() * 26) + 1));      
@@ -47,8 +46,7 @@ function generatePassword() {
     }
 
     //Flipping coin to see if the next character sequence is Special
-    rndNum = Math.floor((Math.random() * 2) + 1);
-    if ((spBool)  && (rndNum == 1)) {
+    if ((spBool)  && (rndNum == 2)) {
       //add character from random postion in Special string
       passwd = passwd + strSpecial.charAt(Math.floor((Math.random() * 20) + 1));
       spUsed = true;
@@ -56,8 +54,7 @@ function generatePassword() {
     }
     
     //Flipping coin to see if the next character sequence is Number
-    rndNum = Math.floor((Math.random() * 2) + 1);
-    if ((nmBool)  && (rndNum == 1)) {
+    if ((nmBool)  && (rndNum == 3)) {
       //add character from random postion in Number string
       passwd = passwd + strNumbers.charAt(Math.floor((Math.random() * 10) + 1));
       nmUsed = true;
